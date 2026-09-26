@@ -77,11 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "RiverPulse — мониторинг состояния воды" },
+      {
+        name: "description",
+        content:
+          "Интерактивная платформа экологического мониторинга рек, предупреждений и работы RiverCleaner.",
+      },
+      { name: "author", content: "RiverPulse" },
+      { property: "og:title", content: "RiverPulse" },
+      {
+        property: "og:description",
+        content: "Мониторинг рек, тревоги и работа роботов-очистителей.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

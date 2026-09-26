@@ -20,6 +20,7 @@ import { Route as OperatorRouteImport } from './routes/operator'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin-login'
+import { Route as ApiAdminSessionRouteImport } from './routes/api/admin-session'
 import { Route as ApiUserAuthRouteImport } from './routes/api/user-auth'
 import { Route as RobotsIdRouteImport } from './routes/robots/$id'
 import { Route as WaterIdRouteImport } from './routes/water/$id'
@@ -79,6 +80,11 @@ const ApiAdminLoginRoute = ApiAdminLoginRouteImport.update({
   path: '/api/admin-login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminSessionRoute = ApiAdminSessionRouteImport.update({
+  id: '/api/admin-session',
+  path: '/api/admin-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiUserAuthRoute = ApiUserAuthRouteImport.update({
   id: '/api/user-auth',
   path: '/api/user-auth',
@@ -107,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/reports'
     | '/api/admin-login'
+    | '/api/admin-session'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -174,6 +184,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/reports'
     | '/api/admin-login'
+    | '/api/admin-session'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/reports'
     | '/api/admin-login'
+    | '/api/admin-session'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -207,6 +219,7 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
   ReportsRoute: typeof ReportsRoute
   ApiAdminLoginRoute: typeof ApiAdminLoginRoute
+  ApiAdminSessionRoute: typeof ApiAdminSessionRoute
   ApiUserAuthRoute: typeof ApiUserAuthRoute
   RobotsIdRoute: typeof RobotsIdRoute
   WaterIdRoute: typeof WaterIdRoute
@@ -291,6 +304,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin-session': {
+      id: '/api/admin-session'
+      path: '/api/admin-session'
+      fullPath: '/api/admin-session'
+      preLoaderRoute: typeof ApiAdminSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/user-auth': {
       id: '/api/user-auth'
       path: '/api/user-auth'
@@ -327,6 +347,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterRoute: RegisterRoute,
   ReportsRoute: ReportsRoute,
   ApiAdminLoginRoute: ApiAdminLoginRoute,
+  ApiAdminSessionRoute: ApiAdminSessionRoute,
   ApiUserAuthRoute: ApiUserAuthRoute,
   RobotsIdRoute: RobotsIdRoute,
   WaterIdRoute: WaterIdRoute,
