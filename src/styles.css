@@ -137,3 +137,5 @@
 .rp-badge{display:inline-flex;align-items:center}
 .rp-demo{margin-block:14px}
 @media(max-width:860px){.rp-section{padding:56px 0}.rp-welcome-preview{padding-block:56px}.rp-page-title{align-items:flex-start}}
+.rp-line-chart{width:100%}
+.rp-line-chart svg{width:100%;display:block}
