@@ -115,3 +115,25 @@
 @media(max-width:820px){.rp-welcome,.rp-welcome-flow{min-height:600px}.rp-welcome{padding-block:72px}.rp-welcome h1{font-size:clamp(2.8rem,9vw,4.4rem)}.rp-welcome-tags{margin-top:32px}.rp-welcome-preview{padding-block:70px}.rp-robot-permissions{grid-template-columns:1fr}.rp-robot-permission-actions{width:100%}}
 @media(max-width:520px){.rp-welcome,.rp-welcome-flow{min-height:560px}.rp-welcome-map{height:380px}.rp-welcome-tags span{font-size:.75rem}.rp-robot-permission-actions .rp-button{width:100%}}
 @media(prefers-reduced-motion:reduce){.rp-welcome-flow:before{animation:none}}
+
+/* --- Полировка сетки и выравнивания --- */
+.rp-welcome{min-height:min(calc(100svh - 110px),760px)}
+.rp-welcome-flow{min-height:min(calc(100svh - 110px),760px)}
+.rp-section{padding:76px 0}
+.rp-welcome-preview{padding-block:76px}
+.rp-page-title{align-items:center}
+.rp-page-title h1{margin:6px 0 0}
+.rp-page-title p{margin:8px 0 0;max-width:62ch}
+.rp-card{border-radius:14px}
+.rp-step-grid,.rp-metric-grid,.rp-six-grid,.rp-two-grid,.rp-learn-grid,.rp-dashboard-split,.rp-robot-grid,.rp-admin-grid,.rp-report-grid{gap:14px}
+.rp-two-grid,.rp-dashboard-split,.rp-robot-grid,.rp-admin-grid,.rp-report-grid{align-items:stretch}
+.rp-two-grid>*,.rp-dashboard-split>*{min-width:0}
+.rp-panel h2{margin:0 0 14px;font-size:1.12rem;letter-spacing:-.01em}
+.rp-panel h3{margin:0 0 12px;font-size:1rem}
+.rp-metric,.rp-water-metric{display:flex;flex-direction:column;gap:6px;justify-content:flex-start}
+.rp-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rp-actions.compact{gap:8px}
+.rp-button{height:42px}
+.rp-badge{display:inline-flex;align-items:center}
+.rp-demo{margin-block:14px}
+@media(max-width:860px){.rp-section{padding:56px 0}.rp-welcome-preview{padding-block:56px}.rp-page-title{align-items:flex-start}}
