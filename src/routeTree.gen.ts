@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LearnRouteImport } from './routes/learn'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as OperatorRouteImport } from './routes/operator'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ApiAdminLoginRouteImport } from './routes/api/admin-login'
+import { Route as ApiAdminSessionRouteImport } from './routes/api/admin-session'
+import { Route as ApiUserAuthRouteImport } from './routes/api/user-auth'
+import { Route as RobotsIdRouteImport } from './routes/robots/$id'
+import { Route as WaterIdRouteImport } from './routes/water/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRoute = LearnRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperatorRoute = OperatorRouteImport.update({
+  id: '/operator',
+  path: '/operator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminLoginRoute = ApiAdminLoginRouteImport.update({
+  id: '/api/admin-login',
+  path: '/api/admin-login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminSessionRoute = ApiAdminSessionRouteImport.update({
+  id: '/api/admin-session',
+  path: '/api/admin-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUserAuthRoute = ApiUserAuthRouteImport.update({
+  id: '/api/user-auth',
+  path: '/api/user-auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsIdRoute = RobotsIdRouteImport.update({
+  id: '/robots/$id',
+  path: '/robots/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WaterIdRoute = WaterIdRouteImport.update({
+  id: '/water/$id',
+  path: '/water/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/map': typeof MapRoute
+  '/operator': typeof OperatorRoute
+  '/register': typeof RegisterRoute
+  '/reports': typeof ReportsRoute
+  '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
+  '/robots/$id': typeof RobotsIdRoute
+  '/water/$id': typeof WaterIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/map': typeof MapRoute
+  '/operator': typeof OperatorRoute
+  '/register': typeof RegisterRoute
+  '/reports': typeof ReportsRoute
+  '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
+  '/robots/$id': typeof RobotsIdRoute
+  '/water/$id': typeof WaterIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/learn': typeof LearnRoute
+  '/login': typeof LoginRoute
+  '/map': typeof MapRoute
+  '/operator': typeof OperatorRoute
+  '/register': typeof RegisterRoute
+  '/reports': typeof ReportsRoute
+  '/api/admin-login': typeof ApiAdminLoginRoute
+  '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
+  '/robots/$id': typeof RobotsIdRoute
+  '/water/$id': typeof WaterIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/analytics'
+    | '/dashboard'
+    | '/learn'
+    | '/login'
+    | '/map'
+    | '/operator'
+    | '/register'
+    | '/reports'
+    | '/api/admin-login'
+    | '/api/admin-session'
+    | '/api/user-auth'
+    | '/robots/$id'
+    | '/water/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/analytics'
+    | '/dashboard'
+    | '/learn'
+    | '/login'
+    | '/map'
+    | '/operator'
+    | '/register'
+    | '/reports'
+    | '/api/admin-login'
+    | '/api/admin-session'
+    | '/api/user-auth'
+    | '/robots/$id'
+    | '/water/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/analytics'
+    | '/dashboard'
+    | '/learn'
+    | '/login'
+    | '/map'
+    | '/operator'
+    | '/register'
+    | '/reports'
+    | '/api/admin-login'
+    | '/api/admin-session'
+    | '/api/user-auth'
+    | '/robots/$id'
+    | '/water/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  DashboardRoute: typeof DashboardRoute
+  LearnRoute: typeof LearnRoute
+  LoginRoute: typeof LoginRoute
+  MapRoute: typeof MapRoute
+  OperatorRoute: typeof OperatorRoute
+  RegisterRoute: typeof RegisterRoute
+  ReportsRoute: typeof ReportsRoute
+  ApiAdminLoginRoute: typeof ApiAdminLoginRoute
+  ApiAdminSessionRoute: typeof ApiAdminSessionRoute
+  ApiUserAuthRoute: typeof ApiUserAuthRoute
+  RobotsIdRoute: typeof RobotsIdRoute
+  WaterIdRoute: typeof WaterIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +234,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operator': {
+      id: '/operator'
+      path: '/operator'
+      fullPath: '/operator'
+      preLoaderRoute: typeof OperatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin-login': {
+      id: '/api/admin-login'
+      path: '/api/admin-login'
+      fullPath: '/api/admin-login'
+      preLoaderRoute: typeof ApiAdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin-session': {
+      id: '/api/admin-session'
+      path: '/api/admin-session'
+      fullPath: '/api/admin-session'
+      preLoaderRoute: typeof ApiAdminSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/user-auth': {
+      id: '/api/user-auth'
+      path: '/api/user-auth'
+      fullPath: '/api/user-auth'
+      preLoaderRoute: typeof ApiUserAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots/$id': {
+      id: '/robots/$id'
+      path: '/robots/$id'
+      fullPath: '/robots/$id'
+      preLoaderRoute: typeof RobotsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/water/$id': {
+      id: '/water/$id'
+      path: '/water/$id'
+      fullPath: '/water/$id'
+      preLoaderRoute: typeof WaterIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  DashboardRoute: DashboardRoute,
+  LearnRoute: LearnRoute,
+  LoginRoute: LoginRoute,
+  MapRoute: MapRoute,
+  OperatorRoute: OperatorRoute,
+  RegisterRoute: RegisterRoute,
+  ReportsRoute: ReportsRoute,
+  ApiAdminLoginRoute: ApiAdminLoginRoute,
+  ApiAdminSessionRoute: ApiAdminSessionRoute,
+  ApiUserAuthRoute: ApiUserAuthRoute,
+  RobotsIdRoute: RobotsIdRoute,
+  WaterIdRoute: WaterIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
