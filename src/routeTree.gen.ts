@@ -19,6 +19,7 @@ import { Route as MapRouteImport } from './routes/map'
 import { Route as OperatorRouteImport } from './routes/operator'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ApiUserAuthRouteImport } from './routes/api/user-auth'
 import { Route as RobotsIdRouteImport } from './routes/robots/$id'
 import { Route as WaterIdRouteImport } from './routes/water/$id'
 
@@ -72,6 +73,11 @@ const ReportsRoute = ReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiUserAuthRoute = ApiUserAuthRouteImport.update({
+  id: '/api/user-auth',
+  path: '/api/user-auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RobotsIdRoute = RobotsIdRouteImport.update({
   id: '/robots/$id',
   path: '/robots/$id',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/operator': typeof OperatorRoute
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
 }
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/operator': typeof OperatorRoute
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
 }
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/operator': typeof OperatorRoute
   '/register': typeof RegisterRoute
   '/reports': typeof ReportsRoute
+  '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
 }
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/operator'
     | '/register'
     | '/reports'
+    | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/operator'
     | '/register'
     | '/reports'
+    | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
   id:
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/operator'
     | '/register'
     | '/reports'
+    | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
   fileRoutesById: FileRoutesById
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   OperatorRoute: typeof OperatorRoute
   RegisterRoute: typeof RegisterRoute
   ReportsRoute: typeof ReportsRoute
+  ApiUserAuthRoute: typeof ApiUserAuthRoute
   RobotsIdRoute: typeof RobotsIdRoute
   WaterIdRoute: typeof WaterIdRoute
 }
@@ -258,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/user-auth': {
+      id: '/api/user-auth'
+      path: '/api/user-auth'
+      fullPath: '/api/user-auth'
+      preLoaderRoute: typeof ApiUserAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/robots/$id': {
       id: '/robots/$id'
       path: '/robots/$id'
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperatorRoute: OperatorRoute,
   RegisterRoute: RegisterRoute,
   ReportsRoute: ReportsRoute,
+  ApiUserAuthRoute: ApiUserAuthRoute,
   RobotsIdRoute: RobotsIdRoute,
   WaterIdRoute: WaterIdRoute,
 }
