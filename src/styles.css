@@ -139,3 +139,12 @@
 @media(max-width:860px){.rp-section{padding:56px 0}.rp-welcome-preview{padding-block:56px}.rp-page-title{align-items:flex-start}}
 .rp-line-chart{width:100%}
 .rp-line-chart svg{width:100%;display:block}
+
+.rp-axis-chart{display:grid;grid-template-columns:auto auto 1fr;gap:6px;align-items:stretch}
+.rp-axis-y{writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;opacity:.7;text-align:center}
+.rp-axis-ticks{display:flex;flex-direction:column;justify-content:space-between;font-size:10px;opacity:.6;padding-bottom:34px;text-align:right}
+.rp-axis-plot{display:flex;flex-direction:column;min-width:0}
+.rp-axis-plot .rp-line-chart{border-left:1px solid currentColor;border-bottom:1px solid currentColor;border-color:color-mix(in oklab,currentColor 30%,transparent)}
+.rp-axis-xticks{display:flex;justify-content:space-between;font-size:10px;opacity:.6;margin-top:3px}
+.rp-axis-x{text-align:center;font-size:11px;opacity:.7}
+.rp-spark-axes{display:flex;justify-content:space-between;font-size:9px;opacity:.55}
