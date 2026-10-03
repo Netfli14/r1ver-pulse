@@ -1,7 +1,5 @@
 import { useRef, useState } from "react";
-import { Bot, RefreshCw, Send, Sparkles as _unused, AlertTriangle } from "lucide-react";
-
-void _unused;
+import { Bot, RefreshCw, Send, AlertTriangle } from "lucide-react";
 
 export type DemoReport = { id: string; category: string; date: string; description: string; location: string };
 
