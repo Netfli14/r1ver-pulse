@@ -21,6 +21,8 @@ import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin-login'
 import { Route as ApiAdminSessionRouteImport } from './routes/api/admin-session'
+import { Route as ApiAiLearnRouteImport } from './routes/api/ai-learn'
+import { Route as ApiAiReportsRouteImport } from './routes/api/ai-reports'
 import { Route as ApiUserAuthRouteImport } from './routes/api/user-auth'
 import { Route as RobotsIdRouteImport } from './routes/robots/$id'
 import { Route as WaterIdRouteImport } from './routes/water/$id'
@@ -85,6 +87,16 @@ const ApiAdminSessionRoute = ApiAdminSessionRouteImport.update({
   path: '/api/admin-session',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAiLearnRoute = ApiAiLearnRouteImport.update({
+  id: '/api/ai-learn',
+  path: '/api/ai-learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiReportsRoute = ApiAiReportsRouteImport.update({
+  id: '/api/ai-reports',
+  path: '/api/ai-reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiUserAuthRoute = ApiUserAuthRouteImport.update({
   id: '/api/user-auth',
   path: '/api/user-auth',
@@ -114,6 +126,8 @@ export interface FileRoutesByFullPath {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-learn': typeof ApiAiLearnRoute
+  '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -131,6 +145,8 @@ export interface FileRoutesByTo {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-learn': typeof ApiAiLearnRoute
+  '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -149,6 +165,8 @@ export interface FileRoutesById {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-learn': typeof ApiAiLearnRoute
+  '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
   '/robots/$id': typeof RobotsIdRoute
   '/water/$id': typeof WaterIdRoute
@@ -168,6 +186,8 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-learn'
+    | '/api/ai-reports'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -185,6 +205,8 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-learn'
+    | '/api/ai-reports'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -202,6 +224,8 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-learn'
+    | '/api/ai-reports'
     | '/api/user-auth'
     | '/robots/$id'
     | '/water/$id'
@@ -220,6 +244,8 @@ export interface RootRouteChildren {
   ReportsRoute: typeof ReportsRoute
   ApiAdminLoginRoute: typeof ApiAdminLoginRoute
   ApiAdminSessionRoute: typeof ApiAdminSessionRoute
+  ApiAiLearnRoute: typeof ApiAiLearnRoute
+  ApiAiReportsRoute: typeof ApiAiReportsRoute
   ApiUserAuthRoute: typeof ApiUserAuthRoute
   RobotsIdRoute: typeof RobotsIdRoute
   WaterIdRoute: typeof WaterIdRoute
@@ -311,6 +337,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminSessionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/ai-learn': {
+      id: '/api/ai-learn'
+      path: '/api/ai-learn'
+      fullPath: '/api/ai-learn'
+      preLoaderRoute: typeof ApiAiLearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-reports': {
+      id: '/api/ai-reports'
+      path: '/api/ai-reports'
+      fullPath: '/api/ai-reports'
+      preLoaderRoute: typeof ApiAiReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/user-auth': {
       id: '/api/user-auth'
       path: '/api/user-auth'
@@ -348,6 +388,8 @@ const rootRouteChildren: RootRouteChildren = {
   ReportsRoute: ReportsRoute,
   ApiAdminLoginRoute: ApiAdminLoginRoute,
   ApiAdminSessionRoute: ApiAdminSessionRoute,
+  ApiAiLearnRoute: ApiAiLearnRoute,
+  ApiAiReportsRoute: ApiAiReportsRoute,
   ApiUserAuthRoute: ApiUserAuthRoute,
   RobotsIdRoute: RobotsIdRoute,
   WaterIdRoute: WaterIdRoute,

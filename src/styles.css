@@ -148,3 +148,25 @@
 .rp-axis-xticks{display:flex;justify-content:space-between;font-size:10px;opacity:.6;margin-top:3px}
 .rp-axis-x{text-align:center;font-size:11px;opacity:.7}
 .rp-spark-axes{display:flex;justify-content:space-between;font-size:9px;opacity:.55}
+
+.rp-report-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:12px}
+.rp-report-item{border:1px solid color-mix(in oklab,currentColor 15%,transparent);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.rp-report-item.urgent{border-color:#ef4444;box-shadow:inset 3px 0 0 #ef4444}
+.rp-report-item p{margin:0;font-size:14px;opacity:.8}
+.rp-report-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px;opacity:.85}
+.rp-ai-text{white-space:pre-wrap;line-height:1.6;margin-top:12px}
+.rp-muted{opacity:.6}
+.rp-learn-chat{margin-top:24px}
+.rp-chat-head{display:flex;gap:12px;align-items:center}
+.rp-chat-head h2,.rp-chat-head p{margin:0}
+.rp-chat-head p{opacity:.65;font-size:14px}
+.rp-chat-log{display:flex;flex-direction:column;gap:10px;max-height:460px;overflow:auto;margin:16px 0}
+.rp-chat-suggest{display:flex;flex-wrap:wrap;gap:8px}
+.rp-chat-msg{padding:10px 14px;border-radius:14px;white-space:pre-wrap;line-height:1.55;max-width:85%}
+.rp-chat-msg.user{align-self:flex-end;background:#22c55e;color:#04140a}
+.rp-chat-msg.assistant{align-self:flex-start;border:1px solid color-mix(in oklab,currentColor 15%,transparent)}
+.rp-chat-form{display:flex;gap:8px}
+.rp-chat-form input{flex:1;min-width:0}
+.rp-learn-article{margin-top:24px;line-height:1.7;max-width:900px}
+.rp-learn-article h3{margin-top:24px}
+.rp-learn-article p{opacity:.85}
