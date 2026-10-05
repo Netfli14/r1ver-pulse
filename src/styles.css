@@ -170,3 +170,25 @@
 .rp-learn-article{margin-top:24px;line-height:1.7;max-width:900px}
 .rp-learn-article h3{margin-top:24px}
 .rp-learn-article p{opacity:.85}
+
+/* Mobile polish */
+html,body{overflow-x:hidden}
+.rp-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+h1,h2,h3,p,span,b,strong,td,th,a,button{overflow-wrap:anywhere}
+@media (max-width:640px){
+  .shell,.rp-content,.rp-admin{padding-left:16px!important;padding-right:16px!important;max-width:100%}
+  .rp-cta{width:auto!important;margin-left:16px!important;margin-right:16px!important;flex-direction:column;align-items:flex-start;padding:24px!important}
+  .rp-panel-head{flex-direction:column;align-items:stretch;gap:12px}
+  .rp-panel,.rp-card{min-width:0}
+  .rp-two-grid,.rp-report-grid,.rp-dashboard-split,.rp-admin-grid{grid-template-columns:1fr!important}
+  .rp-report-list{grid-template-columns:1fr}
+  .rp-chat-msg{max-width:100%}
+  .rp-chat-suggest .rp-button{white-space:normal;text-align:left;height:auto}
+  .rp-learn-article{padding:20px!important}
+  .rp-learn-article h2{font-size:22px}
+  .rp-periods{flex-wrap:wrap}
+  table{font-size:13px}
+  .rp-axis-y{font-size:10px}
+}
+.rp-cta.shell{width:auto;max-width:1440px}@media(min-width:1480px){.rp-cta.shell{margin-inline:auto}}
+@media(max-width:640px){.rp-lesson{min-height:0!important;padding:20px!important}.rp-lesson h2{margin:12px 0 16px!important}.rp-page-title h1{font-size:2rem}}
