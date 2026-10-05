@@ -191,3 +191,4 @@ h1,h2,h3,p,span,b,strong,td,th,a,button{overflow-wrap:anywhere}
   .rp-axis-y{font-size:10px}
 }
 .rp-cta.shell{width:auto;max-width:1440px}@media(min-width:1480px){.rp-cta.shell{margin-inline:auto}}
+@media(max-width:640px){.rp-lesson{min-height:0!important;padding:20px!important}.rp-lesson h2{margin:12px 0 16px!important}.rp-page-title h1{font-size:2rem}}
