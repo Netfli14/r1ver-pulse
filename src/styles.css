@@ -190,3 +190,4 @@ h1,h2,h3,p,span,b,strong,td,th,a,button{overflow-wrap:anywhere}
   table{font-size:13px}
   .rp-axis-y{font-size:10px}
 }
+.rp-cta.shell{width:auto;max-width:1440px}@media(min-width:1480px){.rp-cta.shell{margin-inline:auto}}
