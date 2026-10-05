@@ -50,10 +50,9 @@ export default function RealWaterMap({language,stations=waterStations,selectedId
     if(cancelled||!container.current||mapRef.current)return;
     try{
       const map=new Map({container:container.current,center:[71.42,51.15],zoom:11.3,style:{version:8,sources:{
-        overview:{type:"image",url:"/map-fallback.svg",coordinates:[[71.35,51.19],[71.50,51.19],[71.50,51.11],[71.35,51.11]]},
         osm:{type:"raster",tiles:["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],tileSize:256,attribution:"© OpenStreetMap contributors"},
         satellite:{type:"raster",tiles:["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],tileSize:256,attribution:"© Esri"},
-      },layers:[{id:"overview",type:"raster",source:"overview"},{id:"osm",type:"raster",source:"osm"},{id:"satellite",type:"raster",source:"satellite",layout:{visibility:"none"}}]}});
+      },layers:[{id:"osm",type:"raster",source:"osm"},{id:"satellite",type:"raster",source:"satellite",layout:{visibility:"none"}}]}});
       map.addControl(new NavigationControl({showCompass:true}),"bottom-right");mapRef.current=map;
       // Markers can be attached before remote raster tiles finish (or fail) loading.
       setMapReady(true);
