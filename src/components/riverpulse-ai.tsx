@@ -86,7 +86,7 @@ export function AdminReportAnalysis({ reports }: { reports: DemoReport[] }) {
         </button>
       </div>
       {error && <p className="rp-error">{error}</p>}
-      {text ? <div className="rp-ai-text">{text}</div> : !loading && <p className="rp-muted">Нажмите «Запустить анализ», чтобы получить сводку.</p>}
+      {text ? <div className="rp-ai-text">{text.replace(/\*\*/g,"").replace(/^\s*\*\s+/gm,"• ")}</div> : !loading && <p className="rp-muted">Нажмите «Запустить анализ», чтобы получить сводку.</p>}
       {loading && !text && <p className="rp-muted">Анализирую обращения…</p>}
     </section>
   );
