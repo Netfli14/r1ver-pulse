@@ -3,6 +3,7 @@ export async function streamGatewayText(opts: {
   model: string;
   messages: { role: "system" | "user" | "assistant"; content: string }[];
   signal?: AbortSignal;
+  extra?: Record<string, unknown>;
 }): Promise<Response> {
   const key = process.env.LOVABLE_API_KEY;
   if (!key) return new Response("AI не настроен.", { status: 401 });
@@ -14,7 +15,7 @@ export async function streamGatewayText(opts: {
       "Lovable-API-Key": key,
       "X-Lovable-AIG-SDK": "fetch",
     },
-    body: JSON.stringify({ model: opts.model, messages: opts.messages, stream: true }),
+    body: JSON.stringify({ model: opts.model, messages: opts.messages, stream: true, ...opts.extra }),
     signal: opts.signal,
   });
   if (!upstream.ok || !upstream.body) {

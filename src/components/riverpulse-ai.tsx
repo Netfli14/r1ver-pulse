@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Bot, RefreshCw, Send, AlertTriangle } from "lucide-react";
 
 export type DemoReport = { id: string; category: string; date: string; description: string; location: string };
@@ -196,5 +196,36 @@ export function LearnArticle() {
         </section>
       ))}
     </article>
+  );
+}
+
+export function AnalyticsConclusion() {
+  const [reports, setReports] = useState<DemoReport[]>(sampleReports);
+  const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    let saved: DemoReport[] = [];
+    try { saved = JSON.parse(localStorage.getItem("riverpulse-demo-reports") || "[]") as DemoReport[]; } catch {}
+    const all = [...saved, ...sampleReports].slice(0, 60);
+    setReports(all);
+    void run(all);
+  }, []);
+  async function run(list: DemoReport[]) {
+    setLoading(true); setError(""); setText("");
+    try {
+      const res = await fetch("/api/ai-analytics", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reports: list }) });
+      await readStream(res, setText);
+    } catch (e) { setError(e instanceof Error ? e.message : "Ошибка"); } finally { setLoading(false); }
+  }
+  return (
+    <section className="rp-card rp-panel rp-ai-analysis">
+      <div className="rp-panel-head">
+        <div><h2><Bot size={20} /> Вывод по жалобам жителей</h2><p>AI-вывод по {reports.length} обращениям, включая новые. Попадает в PDF-отчёт.</p></div>
+        <button className="rp-button secondary rp-no-print" onClick={() => run(reports)} disabled={loading}>{loading ? <RefreshCw className="spin" size={16} /> : <RefreshCw size={16} />}Обновить</button>
+      </div>
+      {error && <p className="rp-error">{error}</p>}
+      {text ? <div className="rp-ai-text">{text.replace(/\*\*/g, "").replace(/^#+\s*/gm, "")}</div> : <p className="rp-muted">Формирую вывод…</p>}
+    </section>
   );
 }
