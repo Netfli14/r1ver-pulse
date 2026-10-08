@@ -21,6 +21,7 @@ import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin-login'
 import { Route as ApiAdminSessionRouteImport } from './routes/api/admin-session'
+import { Route as ApiAiAnalyticsRouteImport } from './routes/api/ai-analytics'
 import { Route as ApiAiLearnRouteImport } from './routes/api/ai-learn'
 import { Route as ApiAiReportsRouteImport } from './routes/api/ai-reports'
 import { Route as ApiUserAuthRouteImport } from './routes/api/user-auth'
@@ -87,6 +88,11 @@ const ApiAdminSessionRoute = ApiAdminSessionRouteImport.update({
   path: '/api/admin-session',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAiAnalyticsRoute = ApiAiAnalyticsRouteImport.update({
+  id: '/api/ai-analytics',
+  path: '/api/ai-analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAiLearnRoute = ApiAiLearnRouteImport.update({
   id: '/api/ai-learn',
   path: '/api/ai-learn',
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-analytics': typeof ApiAiAnalyticsRoute
   '/api/ai-learn': typeof ApiAiLearnRoute
   '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-analytics': typeof ApiAiAnalyticsRoute
   '/api/ai-learn': typeof ApiAiLearnRoute
   '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/reports': typeof ReportsRoute
   '/api/admin-login': typeof ApiAdminLoginRoute
   '/api/admin-session': typeof ApiAdminSessionRoute
+  '/api/ai-analytics': typeof ApiAiAnalyticsRoute
   '/api/ai-learn': typeof ApiAiLearnRoute
   '/api/ai-reports': typeof ApiAiReportsRoute
   '/api/user-auth': typeof ApiUserAuthRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-analytics'
     | '/api/ai-learn'
     | '/api/ai-reports'
     | '/api/user-auth'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-analytics'
     | '/api/ai-learn'
     | '/api/ai-reports'
     | '/api/user-auth'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
     | '/reports'
     | '/api/admin-login'
     | '/api/admin-session'
+    | '/api/ai-analytics'
     | '/api/ai-learn'
     | '/api/ai-reports'
     | '/api/user-auth'
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   ReportsRoute: typeof ReportsRoute
   ApiAdminLoginRoute: typeof ApiAdminLoginRoute
   ApiAdminSessionRoute: typeof ApiAdminSessionRoute
+  ApiAiAnalyticsRoute: typeof ApiAiAnalyticsRoute
   ApiAiLearnRoute: typeof ApiAiLearnRoute
   ApiAiReportsRoute: typeof ApiAiReportsRoute
   ApiUserAuthRoute: typeof ApiUserAuthRoute
@@ -337,6 +350,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminSessionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/ai-analytics': {
+      id: '/api/ai-analytics'
+      path: '/api/ai-analytics'
+      fullPath: '/api/ai-analytics'
+      preLoaderRoute: typeof ApiAiAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/ai-learn': {
       id: '/api/ai-learn'
       path: '/api/ai-learn'
@@ -388,6 +408,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReportsRoute: ReportsRoute,
   ApiAdminLoginRoute: ApiAdminLoginRoute,
   ApiAdminSessionRoute: ApiAdminSessionRoute,
+  ApiAiAnalyticsRoute: ApiAiAnalyticsRoute,
   ApiAiLearnRoute: ApiAiLearnRoute,
   ApiAiReportsRoute: ApiAiReportsRoute,
   ApiUserAuthRoute: ApiUserAuthRoute,
