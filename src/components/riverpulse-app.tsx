@@ -12,6 +12,8 @@ import {waterStations,type StationStatus,type WaterStation} from "@/components/r
 import RealWaterMap from "@/components/google-water-map";
 import {t,type Language} from "@/lib/riverpulse-i18n";
 import {LearnArticle,LearnChat,AnalyticsConclusion,ReportList,AdminReportAnalysis,sampleReports} from "@/components/riverpulse-ai";
+import trashDetectionAsset from "@/assets/trash-detection.jpg.asset.json";
+const trashDetectionUrl=(trashDetectionAsset as {url:string}).url;
 
 const routes=[
   ["nav.home","/"],["nav.map","/map"],["nav.water","/water/esil"],["nav.robots","/robots/rc-01"],
