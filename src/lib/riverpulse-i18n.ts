@@ -63,7 +63,7 @@ const messages: Record<string, Record<Language, string>> = {
   "map.turbidity": {RU:"Мутность",KZ:"Лайлылық",EN:"Turbidity"},
   "map.oxygen": {RU:"Растворённый кислород",KZ:"Еріген оттегі",EN:"Dissolved oxygen"},
   "map.conductivity": {RU:"Электропроводность",KZ:"Электрөткізгіштік",EN:"Conductivity"},
-  "water.title": {RU:"Река Есиль",KZ:"Есіл өзені",EN:"Esil River"},
+  "water.title": {RU:"Озеро Сарыколь",KZ:"Сарыкөл көлі",EN:"Lake Sarykol"},
   "water.period": {RU:"Динамика показателей",KZ:"Көрсеткіштер динамикасы",EN:"Metric trends"},
   "water.favorite": {RU:"В избранное",KZ:"Таңдаулыға",EN:"Add to favorites"},
   "water.favoriteOn": {RU:"В избранном",KZ:"Таңдаулыда",EN:"Saved"},

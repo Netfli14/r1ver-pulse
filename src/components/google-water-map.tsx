@@ -42,7 +42,7 @@ export default function GoogleWaterMap({ language, stations = waterStations, sel
     loadGoogleMaps().then(() => {
       if (off || !el.current || map.current) return;
       const g = window.google.maps;
-      map.current = new g.Map(el.current, { center: { lat: 51.15, lng: 71.42 }, zoom: 12, clickableIcons: false, mapTypeControl: false, streetViewControl: false, fullscreenControl: true });
+      map.current = new g.Map(el.current, { center: { lat: 42.53565, lng: 68.288398 }, zoom: 13, clickableIcons: false, mapTypeControl: false, streetViewControl: false, fullscreenControl: true });
       setReady(true);
     }).catch(() => setError(true));
     return () => { off = true; };
