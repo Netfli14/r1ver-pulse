@@ -7,17 +7,23 @@ export async function streamGatewayText(opts: {
 }): Promise<Response> {
   const key = process.env.LOVABLE_API_KEY;
   if (!key) return new Response("AI не настроен.", { status: 401 });
-  const upstream = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${key}`,
-      "Lovable-API-Key": key,
-      "X-Lovable-AIG-SDK": "fetch",
-    },
-    body: JSON.stringify({ model: opts.model, messages: opts.messages, stream: true, ...opts.extra }),
-    signal: opts.signal,
-  });
+  let upstream: Response;
+  try {
+    upstream = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+        "Lovable-API-Key": key,
+        "X-Lovable-AIG-SDK": "fetch",
+      },
+      body: JSON.stringify({ model: opts.model, messages: opts.messages, stream: true, ...opts.extra }),
+      signal: opts.signal,
+    });
+  } catch (e) {
+    const aborted = (e as { name?: string })?.name === "AbortError";
+    return new Response(aborted ? "Запрос отменён." : "AI-сервис недоступен.", { status: aborted ? 499 : 502 });
+  }
   if (!upstream.ok || !upstream.body) {
     let message = "Ошибка AI-сервиса.";
     try {
